@@ -1,25 +1,31 @@
 #include "main.h"
-
 /**
- * puts2 - this will print all even of a string
+ * puts2 -  prints every character of a string
  *
- * @str: string paramater input
- *
- * Return: Nothing
+ * starting with the first one
+ * @str:  the input
+ * Return: print
  */
 
 void puts2(char *str)
 {
-	int i;
+	int l = 0;
+	int i = 0;
+	char *x = str;
+	int o;
 
-	for (i = 0; str[i] != "\0"; ++i)
+	while (*x != '\0')
 	{
-
-		if (i % 2 == 0)
-		{
-			_putchar(str[i]);
-		}
+		x++;
+		l++;
+	}
+	i = l - 1;
+	for (o = 0 ; o <= i ; o++)
+	{
+		if (o % 2 == 0)
+	{
+		_putchar(str[o]);
+	}
 	}
 	_putchar('\n');
-
 }
