@@ -2,10 +2,11 @@
 
 /**
  * char *_strcpy -  copies the string pointed to by src
- * @dest: chart type string
- * @src: char type string
+ * @dest: copy to
+ * @src: copy from
  * Return: string
  */
+
 char *_strcpy(char *dest, char *src)
 {
 	int l = 0;
