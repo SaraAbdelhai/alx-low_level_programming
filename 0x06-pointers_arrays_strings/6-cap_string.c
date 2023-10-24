@@ -1,57 +1,33 @@
 #include "main.h"
-#include <stdio.h>
-
-/**
- * islower - determinate whether ascit is lowercase
- * @c: character
- * Return: 1 if true, 0 if false
- */
-
-int isLower(char c)
-{
-	return (c >= 97 && c <= 122;)
-}
-
-/**
- * isDelimter - determines whether ascall is a delimter
- * @c: character
- * Return: 1 if true, 0 if false
- */
-
-int isDelmiter(char c)
-{
-	int i;
-	char delimiter[] = "\t\n,.!?\"(){}";
-
-	for (i = 0; i < 12; i++)
-		if (c == delimiter[i])
-			return (1);
-	return (0);
-}
 
 /**
  * cap_string - capitalizes all words of a string.
- * @s: input string
- * Return: string with capitalized words
+ *
+ * @str: string input
+ *
+ * Return: pointer to str
  */
-
-char *cap_string(char *)
+char *cap_string(char *str)
 {
-	char *ptr = s;
-	int foundDelimit = 1;
+	int i, j;
+	char c[] = {44, 59, 46, '!', '?', '"', '(', ')', '{', '}', ' ', '\t', '\n'};
 
-	while (*s)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (isDelimiter(*s))
-			foundDelimit = 1;
-		else if (isLower(*s) && foundDelimit)
+		if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
+
+		for (j = 0; c[j] != '\0'; j++)
 		{
-			*s -= 32;
-			foundDelimit = 0;
+			if (str[i] == c[j])
+			{
+				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+				{
+					str[i + 1] = str[i + 1] - 32;
+				}
+			}
 		}
-		else
-			foundDelimit = 0;
-		s++;
 	}
-	return (ptr);
+
+	return (str);
 }
